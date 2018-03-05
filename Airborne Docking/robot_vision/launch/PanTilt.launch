@@ -1,0 +1,34 @@
+<!-- Run "sudo -s" first -->
+<launch>
+
+<node name="Pantilt_control" pkg="robot_vision" type="Pantilt_control.py" output="screen">
+
+    <param name="min_Angle" type="int" value="240" />
+    <param name="max_Angle" type="int" value="780" />
+
+    <param name="min_Speed" type="int" value="100" />
+    <param name="max_Speed" type="int" value="1023" />
+
+    <param name="Kp" type="double" value="0.18" />
+    <param name="Ki" type="double" value="0.14" />
+    <param name="Kd" type="double" value="0.02" />
+    <param name="Kdv" type="double" value="5.0" />
+
+    <param name="_gain" type="bool" value="true" />
+
+</node>
+
+<node name="dynamixel_motor_control" pkg="robot_vision" type="dynamixel_motor_control.py" output="screen"/>
+
+<node name="self_localization" pkg="robot_vision" type="self_localization.py" output="screen">
+
+    <param name="Default_Angle_Pan" type="int" value="512" />
+    <param name="Default_Angle_Tilt" type="int" value="512" />
+
+    <param name="Position_xy" type="double" value="3" />
+    <param name="Position_Height_Min" type="double" value="0.1" />
+    <param name="Position_Height_Max" type="double" value="3" />
+
+</node>
+
+</launch>

@@ -1,0 +1,22 @@
+<!-- RealSense camera -->
+<launch>
+
+<node name="vision" pkg="robot_vision" type="vision.py" output="screen">
+
+    <param name="_fps" type="bool" value="false" />
+
+    <param name="_imshow" type="bool" value="true" />
+    <param name="_show_mask" type="bool" value="false" />
+
+    <param name="_set_threshold" type="bool" value="true" />
+
+    <param name="_use_rcsize" type="bool" value="true" />
+    <param name="_plot" type="bool" value="false" />
+
+    <param name="_show_histgram" type="bool" value="false" />
+
+    <param name="_VideoWriter" type="bool" value="false" />
+
+</node>
+
+</launch>
